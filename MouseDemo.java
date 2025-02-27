@@ -1,23 +1,25 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.event.*;
 
 /**
  * Lab 5 demo of mouse events.
  * 
  * @author Jim Teresco
  * @author Ira Goldstein
+ * @author Rebecah Leonard and Katie Morseman 
  * @version Spring 2025
  */
-public class MouseDemo implements Runnable, MouseListener, MouseMotionListener, MouseWheelListener {
+public class MouseDemo extends MouseAdapter implements Runnable {
+
+	String toDisplay;
 
 	/**
 	 * The run method to set up the graphical user interface
 	 */
 	@Override
 	public void run() {
-
+		
 		JFrame.setDefaultLookAndFeelDecorated(true);
 		JFrame frame = new JFrame("MouseDemo");
 		frame.setPreferredSize(new Dimension(500, 500));
@@ -33,7 +35,7 @@ public class MouseDemo implements Runnable, MouseListener, MouseMotionListener, 
 
 				FontMetrics fm = g.getFontMetrics();
 
-				String toDisplay = "Mouse Around and See!";
+				toDisplay = "Mouse Around and See!";
 				int stringWidth = fm.stringWidth(toDisplay);
 				int stringAscent = fm.getAscent();
 
@@ -88,10 +90,12 @@ public class MouseDemo implements Runnable, MouseListener, MouseMotionListener, 
 		System.out.println("mouseMoved: " + e);
 	}
 
+	/* 
 	@Override
 	public void mouseWheelMoved(MouseWheelEvent e) {
 		System.out.println("mouseWheelMoved: " + e);
 	}
+	*/
 
 	public static void main(String args[]) {
 		javax.swing.SwingUtilities.invokeLater(new MouseDemo());
