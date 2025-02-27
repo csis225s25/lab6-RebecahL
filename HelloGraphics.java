@@ -13,13 +13,22 @@ import javax.swing.*;
 // a class that extends JPanel to override the paintComponent method,
 // allowing us to interact with Java's graphics system
 class GraphicsPanel extends JPanel {
-
+    public GraphicsPanel() { 
+        // Set background color for the panel
+        setBackground(Color.LIGHT_GRAY);
+        // Set foreground color (used for drawing text)
+        setForeground(Color.RED);
+    }
     @Override
     public void paintComponent(Graphics g) {
 
         // first, we should call the paintComponent method we are
         // overriding in JPanel
         super.paintComponent(g);
+        
+        // Define a new font (change name, style, and size)
+         Font customFont = new Font("Serif", Font.BOLD | Font.ITALIC, 30);
+         g.setFont(customFont);
 
         // the Graphics object passed to this method has many methods
         // we can use to draw in the area of the panel, one of which
