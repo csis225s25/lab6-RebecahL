@@ -45,12 +45,12 @@ import javax.swing.*;
 
         // Roof (3D perspective)
         g.setColor(Color.RED);
-        int[] xRoof = {140, 260, 380};  // X-coordinates for front roof
+        int[] xRoof = {150, 250, 350};  // X-coordinates for front roof
         int[] yRoof = {200, 100, 200};  // Y-coordinates
         g.fillPolygon(xRoof, yRoof, 3); // Filled front roof
 
         g.setColor(new Color(180, 0, 0)); // Darker red for 3D side roof
-        int[] xSideRoof = {260, 380, 400, 350}; // X-coordinates for side roof
+        int[] xSideRoof = {250, 350, 400, 350}; // X-coordinates for side roof
         int[] ySideRoof = {100, 200, 200, 130};  // Y-coordinates
         g.fillPolygon(xSideRoof, ySideRoof, 4); // Filled side roof
 
